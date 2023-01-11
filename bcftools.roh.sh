@@ -2,6 +2,12 @@
 #
 # Detecting runs of homozygosity (RoH) - https://samtools.github.io/bcftools/howtos/roh-calling.html
 #
+# Requirements
+#
+# BCFtools - https://github.com/samtools/bcftools
+# GNU Parallel - https://www.gnu.org/software/parallel/
+# pigz - https://github.com/madler/pigz
+#
 # Description:
 # BCFtools/RoH: a hidden Markov model approach for detecting autozygosity from next-generation sequencing data
 # https://doi.org/10.1093/bioinformatics/btw044
