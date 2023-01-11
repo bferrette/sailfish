@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Usage:
-#   genotype_calling.sh <ref.fa> <indir_bams> <site_depth.stats> <outdir> <ncores> <njobs>
+#   genotype_calling_allsites.sh <ref.fa> <indir_bams> <site_depth.stats> <outdir> <ncores> <njobs>
 #
 # Description:
 #   Call genotypes with bcftools.
@@ -10,7 +10,7 @@
 #   bcftools
 
 # create a list of BAM files sorted by population
-#ls -1 -v $2/*.clean.bam >> $4/bamlist
+ls -1 -v $2/*.clean.bam >> $4/bamlist
 
 # set minimum and maximum depth thresholds
 min_dp=$(grep -Po '\(MEDIAN \- 5 \* MAD\): \K\-*\d+' $3)
