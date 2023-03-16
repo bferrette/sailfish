@@ -21,5 +21,5 @@ ${HOME}/software/file_converters/stacksStr2immanc.pl -o sailfish.immanc -p WCA,S
 python3 ${HOME}/software/BA3-SNPS-autotune-2.1.2/BA3-SNPS-autotune.py -i sailfish.immanc -l 12034 -b 100000 -g 1000000 -r 10
 
 # Run three independendt runs of BayesAss3-SNPs
-cat bayesass_commands.sh | parallel -j 3 --tmpdir ${HOME}/tmp
+cat bayesass_commands | parallel -j 3 --tmpdir ${HOME}/tmp
 
