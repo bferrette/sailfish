@@ -20,7 +20,7 @@ done
 # run the command for every annotated mitogenome in the directory
 for mitogenome in $(cat mitogenomeslist.txt)
 do
-/opt/table2asn -i ${mitogenome}.fa -f ${mitogenome}.tbl -t template.sbt -euk -a s -V bv -T -Z -j "[mgcode=2] technique [tech=wgs] [topology=circular] [location=mitochondrion] [organism=Istiophorus platypterus]"
+table2asn -i ${mitogenome}.fa -f ${mitogenome}.tbl -t template.sbt -euk -a s -V bv -T -Z -j "[mgcode=2] technique [tech=wgs] [topology=circular] [location=mitochondrion] [organism=Istiophorus platypterus]"
 done
 
 # after to check the BioProject and BioSample of each annotated mitogenome,
