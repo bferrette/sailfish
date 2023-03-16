@@ -1,0 +1,5 @@
+# parallel runs
+BA3-SNPS -F sailfish.1.immanc -l 12034 -s 12345 -i 100000000 -n 1000 -b 10000000 -o sailfish.1.out -m 0.55 -a 0.5500 -f 0.0075 -vugdt > sailfish.1.log 2> sailfish.1.err
+BA3-SNPS -F sailfish.2.immanc -l 12034 -s 23451 -i 100000000 -n 1000 -b 10000000 -o sailfish.2.out -m 0.55 -a 0.5500 -f 0.0075 -vugdt > sailfish.2.log 2> sailfish.2.err
+BA3-SNPS -F sailfish.3.immanc -l 12034 -s 34512 -i 100000000 -n 1000 -b 10000000 -o sailfish.3.out -m 0.55 -a 0.5500 -f 0.0075 -vugdt > sailfish.3.log 2> sailfish.3.err
+
