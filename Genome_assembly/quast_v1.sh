@@ -4,7 +4,7 @@
 # https://github.com/ablab/quast
 #
 # create conda environment
-# conda creat -n QUASTenv -c bioconda -c conda-forge quast
+# conda create -n QUASTenv -c bioconda -c conda-forge quast
 #
 # activate conda environment
 # conda activate QUASTenv
