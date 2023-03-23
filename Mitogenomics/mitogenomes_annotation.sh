@@ -23,6 +23,5 @@ do
 /opt/table2asn -i ${mitogenome}.fa -f ${mitogenome}.tbl -t template.sbt -euk -a s -V bv -T -Z -j "[mgcode=2] technique [tech=wgs] [topology=circular] [location=mitochondrion] [organism=Istiophorus platypterus]"
 done
 
-# after to check the BioProject and BioSample of each annotated mitogenome,
-# directly submittedthe files *.sqn or *.gbf to GenBank by electronic mail at: gb-sub@ncbi.nlm.nih.gov
-
+# after checking the BioProject and BioSample of each newly annotated mitogenome,
+# directly submit the files *.sqn or *.gbf to NCBI-GenBank by electronic mail at: gb-sub@ncbi.nlm.nih.gov
