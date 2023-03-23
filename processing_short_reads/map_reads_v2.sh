@@ -18,13 +18,13 @@ bwa index -a 'bwtsw' $1
 # iterate over read 1 files
 for r1 in $2/*_1.fq.gz; do
   # read 2
-  r2="${r1/_1./_2.}"
+  r2=${r1/_1./_2.}
   # basename
-  base="$(basename ${r1})"
+  base=$(basename ${r1})
   # output sorted BAM
-  sorted_bam="$3/${base/_1.fq.gz/.sorted.bam}"
+  sorted_bam=$3/${base/_1.fq.gz/.sorted.bam}
   # logfile
-  log="$4/${base/_1.fq.gz/.mapping.log}"
+  log=$4/${base/_1.fq.gz/.mapping.log}
   # generate read group fields
   id="$(echo ${base} | sed -e 's/_/\t/g; s/L\([0-9]\)/\1/g' | awk '{ print $1"."$3"."$4 }')"
   sm="$(echo ${base} | awk -F '_' '{ print $1 }')"
