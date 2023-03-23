@@ -31,26 +31,26 @@ library(vegan)
 library(viridis)
 
 #set working directory
-setwd("/home/bferrette/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data")
+setwd("~/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data")
 # load environment
-load("/home/bferrette/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data/env.RData")
+load("~/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data/env.RData")
 # Extract marine environmental data from Bio-Oracle v2.2 - https://www.bio-oracle.org/index.php
 # List marine data sets
 datasets = list_datasets(terrestrial = FALSE, marine = TRUE)
 # List layers avaialble in Bio-ORACLE v2
 layers.bio2 <- list_layers( datasets="Bio-ORACLE" )
 # Prepare data for extraction
-bathy <- load_layers("BO_bathymax", datadir = tempdir("/home/bferrette/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
-chlo <- load_layers("BO22_chlomean_ss", datadir = tempdir("/home/bferrette/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
-ph <- load_layers("BO22_ph", datadir = tempdir("/home/bferrette/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
-ptpk <- load_layers("BO22_carbonphytomean_ss", datadir = tempdir("/home/bferrette/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
-scvl <- load_layers("BO22_curvelmean_ss", datadir = tempdir("/home/bferrette/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
-sdO2 <- load_layers("BO22_dissoxltmax_bdmin", datadir = tempdir("/home/bferrette/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
-sprp <- load_layers("BO22_ppmean_ss", datadir = tempdir("/home/bferrette/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
-ssal <- load_layers("BO22_salinitymean_ss", datadir = tempdir("/home/bferrette/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
-sst <- load_layers("BO22_tempmean_ss", datadir = tempdir("/home/bferrette/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
-light <- load_layers("BO22_lightbotltmax_bdmean", datadir = tempdir("/home/bferrette/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
-diff.atn <- load_layers("BO22_damean", datadir = tempdir("/home/bferrette/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
+bathy <- load_layers("BO_bathymax", datadir = tempdir("~/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
+chlo <- load_layers("BO22_chlomean_ss", datadir = tempdir("~/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
+ph <- load_layers("BO22_ph", datadir = tempdir("~/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
+ptpk <- load_layers("BO22_carbonphytomean_ss", datadir = tempdir("~/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
+scvl <- load_layers("BO22_curvelmean_ss", datadir = tempdir("~/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
+sdO2 <- load_layers("BO22_dissoxltmax_bdmin", datadir = tempdir("~/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
+sprp <- load_layers("BO22_ppmean_ss", datadir = tempdir("~/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
+ssal <- load_layers("BO22_salinitymean_ss", datadir = tempdir("~/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
+sst <- load_layers("BO22_tempmean_ss", datadir = tempdir("~/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
+light <- load_layers("BO22_lightbotltmax_bdmean", datadir = tempdir("~/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
+diff.atn <- load_layers("BO22_damean", datadir = tempdir("~/Documents/billfishes/sailfish/genome/sailfish_cl/populations.analysis/populational/seascape/env_data"))
 # Import coordinates of sites
 coords <- read.delim("popdata.tsv", header = TRUE, sep = "\t")
 names(coords)
