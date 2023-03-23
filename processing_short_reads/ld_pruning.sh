@@ -63,7 +63,7 @@ ls $2/snps.sampled.ld \
 # split ngsLD output to separate files by scaffold
 parallel -j $3 "grep -P {}: $2/snps.ld > $2/snps.ld.{}" ::: $(cat scaffolds_1Mb)
 # prune linked sites by scaffolds in parallel
-parallel -j $3 "perl -I /home/bferrette/perl5/lib/perl5 ${ngsld}/scripts/prune_graph.pl --in_file {} --max_kb_dist 25 --min_weight 0.1 --out {}.pruned &> {}.prune_graph.log" ::: $2/snps.ld.*
+parallel -j $3 "perl -I ~/perl5/lib/perl5 ${ngsld}/scripts/prune_graph.pl --in_file {} --max_kb_dist 25 --min_weight 0.1 --out {}.pruned &> {}.prune_graph.log" ::: $2/snps.ld.*
 # concatenate and sort unlinked sites into a single file
 cat $(ls $2/snps.ld.*.pruned) | sort -V | sed 's/:/_/' > $2/snps.ld.pruned # input ANGSD
 sed -r 's/(.*)_/\1\t/g' snps.ld.pruned > ld_pruned.sites
@@ -74,5 +74,5 @@ cat $(ls -v $2/snps.ld.*.prune_graph.log) > $2/prune_graph.log
 # wc -l $2/snps.ld.scaffold*.pruned
 # wc -l $2/snps.ld.pruned
 rm $2/snps.ld.HiC_scaffold_*
-pigz --best --processes 12 snps.ld
+pigz --best --processes $3 snps.ld
 
