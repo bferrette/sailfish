@@ -2,11 +2,11 @@
 # Geneland 4.9.2 (https://i-pri.org/special/Biostatistics/Software/Geneland/)
 library(GenelandHandleR)
 # Set working directory
-setwd('/home/bferrette/billfishes/mitogenomes/geneland')
+setwd('~/billfishes/mitogenomes/geneland')
 # load Data
 hap <- read.table("sailfish_geneland.txt", header = FALSE, sep = " ")
 coord <- read.table("sailfish_coord.txt", header = FALSE, sep = " ")
-path.mcmc <- "/home/bferrette/billfishes/mitogenomes/geneland"
+path.mcmc <- "~/billfishes/mitogenomes/geneland"
 burnin <- 100000
 nthin <- 1000
 # Run Geneland in parallel
@@ -49,6 +49,6 @@ PlotSample2Map(
 )
 
 # Generate a bar plot with probability of membership for each sample
-path.mcmc <- "/home/bferrette/billfishes/mitogenomes/geneland/output_corrR1"
+path.mcmc <- "~/billfishes/mitogenomes/geneland/output_corrR1"
 popdata <- read.delim("popdata.tsv", header = TRUE, sep = "\t")
 PlotProbMembership(path.mcmc, pal = "Set1", popdata, "pop")
